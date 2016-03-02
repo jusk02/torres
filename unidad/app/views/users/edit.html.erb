@@ -1,0 +1,24 @@
+<h1>Editar tweet</h1>
+
+
+<%= link_to "volver al inicio", towers_path %>
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :nombre %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :identificacion %><br>
+    <%= f.text_field :cc %>
+  </p>
+  <p>
+    <%= f.label :Apartamento %><br>
+    <%= f.text_field :apartment %>
+  </p>
+ 
+ 
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

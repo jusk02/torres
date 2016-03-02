@@ -1,0 +1,20 @@
+<h1>lista de apartamentos</h1>
+
+<% @apartments.each do |apartment| %>
+<li>
+<p>numero de apto
+<%= apartment.number %>
+torre
+<%= apartment.tower_id %>
+piso
+<%= apartment.floor %>
+
+<%= link_to "ver personas", users_path %>
+<%= link_to "editar",edit_apartment_path(apartment)%>
+<%= link_to "eliminar",apartment_path(apartment), method: :delete, data: {confirm: "estas seguro?"} %>
+
+</p>
+</li>
+<% end %>
+
+<%= link_to "Agregar apartamento", new_apartment_path %>

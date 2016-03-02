@@ -1,0 +1,16 @@
+<h1>lista de torres</h1>
+
+
+<% @towers.each do |tower| %>
+<li>
+<%= tower.name %>
+<%= link_to "ver apartamentos", tower_path(tower) %>
+<%= link_to "editar",edit_tower_path(tower)%>
+<%= link_to "eliminar",tower_path(tower), method: :delete, data: {confirm: "estas seguro?"} %>
+</li>
+<% end %>
+<br>
+
+<%= link_to "Agregar Torre", new_tower_path %>
+<%= link_to "Agregar apartamento", new_apartment_path %>
+<%= link_to "Agregar persona", new_user_path %>

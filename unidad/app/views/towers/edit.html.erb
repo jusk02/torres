@@ -1,0 +1,20 @@
+<h1>Editar torre</h1>
+
+
+<%= link_to "volver al inicio", towers_path %>
+<%= form_for @tower do |f| %>
+  <p>
+    <%= f.label :nombre %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :portero %><br>
+    <%= f.text_field :doorman %>
+  </p>
+  
+ 
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

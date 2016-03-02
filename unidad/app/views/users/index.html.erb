@@ -1,0 +1,9 @@
+<h1>lista de personas</h1>
+
+<% @users.each do |user| %>
+<li>
+<%= user.name %>
+<%= link_to "editar",edit_user_path(user)%>
+<%= link_to "eliminar",user_path(user), method: :delete, data: {confirm: "estas seguro?"} %>
+</li>
+<% end %>

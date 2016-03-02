@@ -1,0 +1,23 @@
+<h1>agregar persona</h1>
+
+
+<%= link_to "Ver lista", users_path %>
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :Nombre %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :ID %><br>
+    <%= f.text_field :cc %><br>
+ </p>
+ <p>
+
+ 	<%= f.label :apartamento %><br>
+ 	<%= f.select :apartment, Apartment.all.collect{|u|[u.number, u.id]} %>
+
+ </p>
+ 
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

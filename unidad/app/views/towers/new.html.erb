@@ -1,0 +1,22 @@
+<h1>Crear Torre</h1>
+
+
+<%= link_to "Ver lista", towers_path %>
+<%= form_for @tower do |f| %>
+  <p>
+    <%= f.label :Nombre %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :Portero %><br>
+    <%= f.text_field :doorman %><br>
+ </p>
+ <p>
+
+ 	
+
+ </p>
+ 
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
