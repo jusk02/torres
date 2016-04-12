@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411215742) do
+ActiveRecord::Schema.define(version: 20160412204848) do
 
   create_table "assignments", force: :cascade do |t|
     t.string   "name"
@@ -50,12 +50,20 @@ ActiveRecord::Schema.define(version: 20160411215742) do
     t.string   "name"
     t.string   "lastname"
     t.integer  "dni"
+    t.string   "role"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
 
   add_index "students", ["email"], name: "index_students_on_email", unique: true
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
+
+  create_table "students_assignments", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "assignment_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "teachers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -71,11 +79,19 @@ ActiveRecord::Schema.define(version: 20160411215742) do
     t.string   "name"
     t.string   "lastname"
     t.integer  "dni"
+    t.string   "role"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
 
   add_index "teachers", ["email"], name: "index_teachers_on_email", unique: true
   add_index "teachers", ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true
+
+  create_table "techers_assignments", force: :cascade do |t|
+    t.integer  "teacher_id"
+    t.integer  "assignment_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
 end
